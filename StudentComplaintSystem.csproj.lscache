@@ -13,19 +13,12 @@ primary
 lastDtbSucceeded
 
 [properties]
-AssemblyName=StudentComplaintSystem
-CommandLineArgsForDesignTimeEvaluation=-langversion:13.0 -define:TRACE
-CompilerGeneratedFilesOutputPath=
-MaxSupportedLangVersion=13.0
-ProjectAssetsFile=<PATH>obj/project.assets.json
-RootNamespace=StudentComplaintSystem
-RunAnalyzers=
-RunAnalyzersDuringLiveAnalysis=
-SolutionPath=<PATH>StudentComplaintSystem.sln
+CommandLineArgsForDesignTimeEvaluation=-langversion:12.0 -define:TRACE
+MaxSupportedLangVersion=12.0
 TargetFrameworkIdentifier=.NETCoreApp
-TargetPath=<PATH>bin/Debug/net9.0/StudentComplaintSystem.dll
-TargetRefPath=<PATH>obj/Debug/net9.0/ref/StudentComplaintSystem.dll
-TemporaryDependencyNodeTargetIdentifier=net9.0
+TargetPath=<PATH>bin/Debug/net8.0/StudentComplaintSystem.dll
+TargetRefPath=<PATH>obj/Debug/net8.0/ref/StudentComplaintSystem.dll
+TemporaryDependencyNodeTargetIdentifier=net8.0
 
 [commandLineArguments]
 /noconfig
@@ -35,21 +28,21 @@ TemporaryDependencyNodeTargetIdentifier=net9.0
 /fullpaths
 /nostdlib+
 /errorreport:prompt
-/warn:9
-/define:TRACE;DEBUG;NET;NET9_0;NETCOREAPP;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP1_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER
+/warn:8
+/define:TRACE;DEBUG;NET;NET8_0;NETCOREAPP;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP1_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER
 /highentropyva+
 /nullable:enable
 /debug+
 /debug:portable
 /filealign:512
 /optimize-
-/out:obj\Debug\net9.0\StudentComplaintSystem.dll
-/refout:obj\Debug\net9.0\refint\StudentComplaintSystem.dll
+/out:obj\Debug\net8.0\StudentComplaintSystem.dll
+/refout:obj\Debug\net8.0\refint\StudentComplaintSystem.dll
 /target:exe
 /warnaserror-
 /utf8output
 /deterministic+
-/langversion:13.0
+/langversion:12.0
 /warnaserror+:NU1605,SYSLIB0011
 
 [sourceFiles]
@@ -59,8 +52,8 @@ Migrations/
  20260511144133_InitialCreate.Designer.cs
  AppDbContextModelSnapshot.cs
 models/Complaint.cs
-obj/Debug/net9.0/
- .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+obj/Debug/net8.0/
+ .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
  StudentComplaintSystem.AssemblyInfo.cs
  StudentComplaintSystem.GlobalUsings.g.cs
  StudentComplaintSystem.RazorAssemblyInfo.cs
@@ -78,7 +71,7 @@ Pages/
 Program.cs
 
 [metadataReferences]
-<DOTNET>/packs/Microsoft.AspNetCore.App.Ref/9.0.2/ref/net9.0/
+<DOTNET>/packs/Microsoft.AspNetCore.App.Ref/8.0.13/ref/net8.0/
  Microsoft.AspNetCore.Antiforgery.dll
  Microsoft.AspNetCore.Authentication.Abstractions.dll
  Microsoft.AspNetCore.Authentication.BearerToken.dll
@@ -162,13 +155,9 @@ Program.cs
  Microsoft.AspNetCore.SignalR.Core.dll
  Microsoft.AspNetCore.SignalR.dll
  Microsoft.AspNetCore.SignalR.Protocols.Json.dll
- Microsoft.AspNetCore.StaticAssets.dll
  Microsoft.AspNetCore.StaticFiles.dll
  Microsoft.AspNetCore.WebSockets.dll
  Microsoft.AspNetCore.WebUtilities.dll
- Microsoft.Extensions.Caching.Abstractions.dll
- Microsoft.Extensions.Caching.Memory.dll
- Microsoft.Extensions.Configuration.Abstractions.dll
  Microsoft.Extensions.Configuration.Binder.dll
  Microsoft.Extensions.Configuration.CommandLine.dll
  Microsoft.Extensions.Configuration.dll
@@ -179,8 +168,6 @@ Program.cs
  Microsoft.Extensions.Configuration.KeyPerFile.dll
  Microsoft.Extensions.Configuration.UserSecrets.dll
  Microsoft.Extensions.Configuration.Xml.dll
- Microsoft.Extensions.DependencyInjection.Abstractions.dll
- Microsoft.Extensions.DependencyInjection.dll
  Microsoft.Extensions.Diagnostics.Abstractions.dll
  Microsoft.Extensions.Diagnostics.dll
  Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
@@ -198,26 +185,22 @@ Program.cs
  Microsoft.Extensions.Identity.Stores.dll
  Microsoft.Extensions.Localization.Abstractions.dll
  Microsoft.Extensions.Localization.dll
- Microsoft.Extensions.Logging.Abstractions.dll
  Microsoft.Extensions.Logging.Configuration.dll
  Microsoft.Extensions.Logging.Console.dll
  Microsoft.Extensions.Logging.Debug.dll
- Microsoft.Extensions.Logging.dll
  Microsoft.Extensions.Logging.EventLog.dll
  Microsoft.Extensions.Logging.EventSource.dll
  Microsoft.Extensions.Logging.TraceSource.dll
  Microsoft.Extensions.ObjectPool.dll
  Microsoft.Extensions.Options.ConfigurationExtensions.dll
  Microsoft.Extensions.Options.DataAnnotations.dll
- Microsoft.Extensions.Options.dll
- Microsoft.Extensions.Primitives.dll
  Microsoft.Extensions.WebEncoders.dll
  Microsoft.JSInterop.dll
  Microsoft.Net.Http.Headers.dll
  System.Diagnostics.EventLog.dll
  System.Security.Cryptography.Xml.dll
  System.Threading.RateLimiting.dll
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/9.0.2/ref/net9.0/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/8.0.13/ref/net8.0/
  Microsoft.CSharp.dll
  Microsoft.VisualBasic.Core.dll
  Microsoft.VisualBasic.dll
@@ -246,7 +229,6 @@ Program.cs
  System.Data.dll
  System.Diagnostics.Contracts.dll
  System.Diagnostics.Debug.dll
- System.Diagnostics.DiagnosticSource.dll
  System.Diagnostics.FileVersionInfo.dll
  System.Diagnostics.Process.dll
  System.Diagnostics.StackTrace.dll
@@ -275,7 +257,6 @@ Program.cs
  System.IO.FileSystem.Watcher.dll
  System.IO.IsolatedStorage.dll
  System.IO.MemoryMappedFiles.dll
- System.IO.Pipelines.dll
  System.IO.Pipes.AccessControl.dll
  System.IO.Pipes.dll
  System.IO.UnmanagedMemoryStream.dll
@@ -353,8 +334,6 @@ Program.cs
  System.Text.Encoding.CodePages.dll
  System.Text.Encoding.dll
  System.Text.Encoding.Extensions.dll
- System.Text.Encodings.Web.dll
- System.Text.Json.dll
  System.Text.RegularExpressions.dll
  System.Threading.Channels.dll
  System.Threading.dll
@@ -400,7 +379,16 @@ Program.cs
  microsoft.entityframeworkcore.relational/9.0.0/lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
  microsoft.entityframeworkcore.sqlite.core/9.0.0/lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll
  microsoft.entityframeworkcore/9.0.0/lib/net8.0/Microsoft.EntityFrameworkCore.dll
- microsoft.extensions.dependencymodel/9.0.0/lib/net9.0/Microsoft.Extensions.DependencyModel.dll
+ microsoft.extensions.caching.abstractions/9.0.0/lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll
+ microsoft.extensions.caching.memory/9.0.0/lib/net8.0/Microsoft.Extensions.Caching.Memory.dll
+ microsoft.extensions.configuration.abstractions/9.0.0/lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
+ microsoft.extensions.dependencyinjection.abstractions/9.0.0/lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+ microsoft.extensions.dependencyinjection/9.0.0/lib/net8.0/Microsoft.Extensions.DependencyInjection.dll
+ microsoft.extensions.dependencymodel/9.0.0/lib/net8.0/Microsoft.Extensions.DependencyModel.dll
+ microsoft.extensions.logging.abstractions/9.0.0/lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+ microsoft.extensions.logging/9.0.0/lib/net8.0/Microsoft.Extensions.Logging.dll
+ microsoft.extensions.options/9.0.0/lib/net8.0/Microsoft.Extensions.Options.dll
+ microsoft.extensions.primitives/9.0.0/lib/net8.0/Microsoft.Extensions.Primitives.dll
  mono.texttemplating/3.0.0/lib/net6.0/Mono.TextTemplating.dll
  sqlitepclraw.bundle_e_sqlite3/2.1.10/lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll
  sqlitepclraw.core/2.1.10/lib/netstandard2.0/SQLitePCLRaw.core.dll
@@ -411,21 +399,21 @@ Program.cs
  system.composition.hosting/7.0.0/lib/net7.0/System.Composition.Hosting.dll
  system.composition.runtime/7.0.0/lib/net7.0/System.Composition.Runtime.dll
  system.composition.typedparts/7.0.0/lib/net7.0/System.Composition.TypedParts.dll
+ system.diagnostics.diagnosticsource/9.0.0/lib/net8.0/System.Diagnostics.DiagnosticSource.dll
+ system.io.pipelines/9.0.0/lib/net8.0/System.IO.Pipelines.dll
+ system.text.encodings.web/9.0.0/lib/net8.0/System.Text.Encodings.Web.dll
+ system.text.json/9.0.0/lib/net8.0/System.Text.Json.dll
 
 [analyzerReferences]
-<DOTNET>/packs/Microsoft.AspNetCore.App.Ref/9.0.2/analyzers/dotnet/cs/
+<DOTNET>/packs/Microsoft.AspNetCore.App.Ref/8.0.13/analyzers/dotnet/cs/
  Microsoft.AspNetCore.App.Analyzers.dll
  Microsoft.AspNetCore.App.CodeFixes.dll
  Microsoft.AspNetCore.Components.Analyzers.dll
-<DOTNET>/packs/Microsoft.AspNetCore.App.Ref/9.0.2/analyzers/dotnet/roslyn4.4/cs/
- Microsoft.Extensions.Logging.Generators.dll
- Microsoft.Extensions.Options.SourceGeneration.dll
-<DOTNET>/packs/Microsoft.NETCore.App.Ref/9.0.2/analyzers/dotnet/cs/
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/8.0.13/analyzers/dotnet/cs/
  Microsoft.Interop.ComInterfaceGenerator.dll
  Microsoft.Interop.JavaScript.JSImportGenerator.dll
  Microsoft.Interop.LibraryImportGenerator.dll
  Microsoft.Interop.SourceGeneration.dll
- System.Text.Json.SourceGeneration.dll
  System.Text.RegularExpressions.Generator.dll
 <DOTNET>/sdk/9.0.200/Sdks/Microsoft.NET.Sdk.Razor/source-generators/
  Microsoft.AspNetCore.Razor.Utilities.Shared.dll
@@ -441,11 +429,15 @@ Program.cs
 <NUGET>/microsoft.codeanalysis.analyzers/3.3.4/analyzers/dotnet/cs/
  Microsoft.CodeAnalysis.Analyzers.dll
  Microsoft.CodeAnalysis.CSharp.Analyzers.dll
-<NUGET>/microsoft.entityframeworkcore.analyzers/9.0.0/analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll
+<NUGET>/
+ microsoft.entityframeworkcore.analyzers/9.0.0/analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll
+ microsoft.extensions.logging.abstractions/9.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll
+ microsoft.extensions.options/9.0.0/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll
+ system.text.json/9.0.0/analyzers/dotnet/roslyn4.4/cs/System.Text.Json.SourceGeneration.dll
 
 [analyzerConfigFiles]
-<DOTNET>/sdk/9.0.200/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_9_default.globalconfig
-obj/Debug/net9.0/StudentComplaintSystem.GeneratedMSBuildEditorConfig.editorconfig
+<DOTNET>/sdk/9.0.200/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_8_default.globalconfig
+obj/Debug/net8.0/StudentComplaintSystem.GeneratedMSBuildEditorConfig.editorconfig
 
 [additionalFiles]
 Pages/
