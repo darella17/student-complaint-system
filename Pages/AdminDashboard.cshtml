@@ -1,0 +1,125 @@
+@page
+@model AdminDashboardModel
+
+
+<div class="mb-3 text-end">
+    <a class="btn btn-danger btn-sm" href="/Logout">
+        Logout
+    </a>
+</div>
+
+<h2 class="mb-4 text-primary fw-bold">
+    Admin Dashboard
+</h2>
+
+<!-- STATS CARDS -->
+<div class="row mb-4">
+
+    <div class="col-md-4">
+        <div class="card border-primary shadow-lg">
+            <div class="card-body text-center">
+                <h5 class="text-primary">Total Complaints</h5>
+                <h2 class="fw-bold">@Model.Complaints.Count</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-warning shadow-lg">
+            <div class="card-body text-center">
+                <h5 class="text-warning">Pending</h5>
+                <h2 class="fw-bold">@Model.Complaints.Count(c => c.Status == "Pending")</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-success shadow-lg">
+            <div class="card-body text-center">
+                <h5 class="text-success">Resolved</h5>
+                <h2 class="fw-bold">@Model.Complaints.Count(c => c.Status == "Resolved")</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- TABLE -->
+<h5 class="mt-4 mb-3">All Complaints</h5>
+
+<style>
+    /* FORCE STRONG BORDERS */
+    table.force-table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    table.force-table th,
+    table.force-table td {
+        border: 2px solid #000 !important;
+        padding: 10px;
+    }
+
+    table.force-table th {
+        background-color: #212529;
+        color: white;
+    }
+</style>
+
+<div class="table-responsive">
+
+    <table class="force-table">
+
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Date Submitted</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        @foreach (var item in Model.Complaints)
+        {
+            <tr>
+                <td>@item.Title</td>
+
+                <td>@item.Description</td>
+
+                <td>
+                    @if (item.Status == "Resolved")
+                    {
+                        <span class="badge bg-success">Resolved</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    }
+                </td>
+
+                <td>@item.DateSubmitted</td>
+
+                <td>
+                    @if (item.Status != "Resolved")
+                    {
+                        <a class="btn btn-sm btn-success"
+                           href="/Resolve?id=@item.Id">
+                            Resolve
+                        </a>
+                    }
+                    else
+                    {
+                        <span class="text-muted">Done</span>
+                    }
+                </td>
+            </tr>
+        }
+
+        </tbody>
+
+    </table>
+
+</div>

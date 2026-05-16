@@ -1,0 +1,91 @@
+@page
+@model StudentComplaintSystem.Pages.SubmitComplaintModel
+
+@{
+    ViewData["Title"] = "Submit Complaint";
+}
+
+<style>
+
+.complaint-container{
+    max-width:600px;
+    margin:40px auto;
+}
+
+.card-form{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    border:1px solid #e6e6e6;
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    font-weight:500;
+    margin-bottom:6px;
+}
+
+.form-control{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #dcdcdc;
+    font-size:14px;
+}
+
+.form-control:focus{
+    outline:none;
+    border-color:#0d6efd;
+    box-shadow:0 0 0 2px rgba(13,110,253,0.15);
+}
+
+.btn-submit{
+    width:100%;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.2s ease;
+}
+
+.btn-submit:hover{
+    background:#0b5ed7;
+}
+
+</style>
+
+<div class="complaint-container">
+
+    <h2>Submit Complaint</h2>
+
+    <div class="card-form">
+
+        <form method="post">
+
+            <div class="form-group">
+                <label for="Title">Title</label>
+                <input asp-for="Title" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                Submit Complaint
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

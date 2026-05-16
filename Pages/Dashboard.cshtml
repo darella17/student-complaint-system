@@ -1,0 +1,25 @@
+@page
+@model DashboardModel
+
+<h1>Student Complaint Dashboard</h1>
+
+<a href="/SubmitComplaint">Submit New Complaint</a>
+
+<table border="1" style="margin-top:20px;">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Date Submitted</th>
+    </tr>
+
+@foreach (var complaint in Model.Complaints)
+{
+    <tr>
+        <td>@complaint.Title</td>
+        <td>@complaint.Description</td>
+        <td>@complaint.Status</td>
+        <td>@complaint.DateSubmitted</td>
+    </tr>
+}
+</table>

@@ -1,0 +1,119 @@
+@page
+@model AdminLoginModel
+
+@{
+    ViewData["Title"] = "Admin Login";
+}
+
+<style>
+
+/* PAGE CENTERING */
+.login-wrapper{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f7f6f3;
+    padding:20px;
+}
+
+/* CARD (MATCHES YOUR SYSTEM STYLE) */
+.login-card{
+    width:420px;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    border:1px solid #e6e6e6;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* TITLE */
+.login-title{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:20px;
+    color:#0d2b6b;
+}
+
+/* FORM GROUP */
+.form-group{
+    margin-bottom:18px;
+    display:flex;
+    flex-direction:column;
+}
+
+/* LABEL */
+label{
+    font-weight:500;
+    margin-bottom:6px;
+}
+
+/* INPUT */
+.form-control{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #dcdcdc;
+    font-size:14px;
+}
+
+.form-control:focus{
+    outline:none;
+    border-color:#0d6efd;
+    box-shadow:0 0 0 2px rgba(13,110,253,0.15);
+}
+
+/* BUTTON */
+.btn-primary{
+    width:100%;
+    background:#0d6efd;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.btn-primary:hover{
+    background:#0b5ed7;
+}
+
+.error-text{
+    color:red;
+    margin-top:10px;
+}
+
+</style>
+
+<div class="login-wrapper">
+
+    <div class="login-card">
+
+        <div class="login-title">
+            Admin Login
+        </div>
+
+        <form method="post">
+
+            <div class="form-group">
+                <label>Username</label>
+                <input asp-for="Username" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input asp-for="Password" type="password" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Login
+            </button>
+
+            <p class="error-text">
+                @Model.ErrorMessage
+            </p>
+
+        </form>
+
+    </div>
+
+</div>

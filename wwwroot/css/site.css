@@ -1,0 +1,63 @@
+/* MAIN THEME */
+
+:root{
+    --lcu-blue: #4da6ff;
+}
+
+/* PAGE */
+
+body{
+    background-color: #f5f9ff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background-color: var(--lcu-blue);
+}
+
+.navbar a{
+    color: white !important;
+    font-weight: 500;
+}
+
+/* HEADINGS */
+
+h1,h2,h3,h4{
+    color: #1a3c6e;
+}
+
+/* CARDS */
+
+.card{
+    border-radius: 12px;
+}
+
+/* BUTTONS */
+
+.btn-primary{
+    background-color: var(--lcu-blue);
+    border-color: var(--lcu-blue);
+}
+
+/* TABLE */
+
+table{
+    background-color: white;
+}
+
+th{
+    background-color: var(--lcu-blue);
+    color: white;
+}
+
+/* STATUS BADGES */
+
+.badge.bg-success{
+    background-color: #28a745 !important;
+}
+
+.badge.bg-warning{
+    background-color: #ffc107 !important;
+}
