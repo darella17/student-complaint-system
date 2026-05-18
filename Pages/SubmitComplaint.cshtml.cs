@@ -15,6 +15,15 @@ namespace StudentComplaintSystem.Pages
         }
 
         [BindProperty]
+        public string StudentName { get; set; }
+
+        [BindProperty]
+        public string MatricNumber { get; set; }
+
+        [BindProperty]
+        public string Level { get; set; }
+
+        [BindProperty]
         public string Title { get; set; }
 
         [BindProperty]
@@ -24,6 +33,9 @@ namespace StudentComplaintSystem.Pages
         {
             var complaint = new Complaint
             {
+                StudentName = StudentName,
+                MatricNumber = MatricNumber,
+                Level = Level,
                 Title = Title,
                 Description = Description,
                 Status = "Pending",

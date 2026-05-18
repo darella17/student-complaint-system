@@ -70,6 +70,25 @@ label{
 
         <form method="post">
 
+            <!-- NEW FIELDS ADDED BELOW -->
+
+            <div class="form-group">
+                <label>Student Name</label>
+                <input asp-for="StudentName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Matric Number</label>
+                <input asp-for="MatricNumber" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label>Level</label>
+                <input asp-for="Level" class="form-control" />
+            </div>
+
+            <!-- EXISTING FIELDS -->
+
             <div class="form-group">
                 <label for="Title">Title</label>
                 <input asp-for="Title" class="form-control" />

@@ -24,14 +24,14 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"5430"},{"Name":"Content-Type","Value":"image/x-icon"},{"Name":"ETag","Value":"\u0022Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\u0022"},{"Name":"Last-Modified","Value":"Mon, 11 May 2026 12:55:45 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/StudentComplaintSystem/images/leadcity university.jlukr8vn5l.png">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\leadcity university.png'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/StudentComplaintSystem/images/leadcity-university.jlukr8vn5l.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\leadcity-university.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jlukr8vn5l"},{"Name":"integrity","Value":"sha256-56LrJl9pv2MwzKP7Ys5FwiDyzHJF4Z3VTlTUZHxgztI="},{"Name":"label","Value":"_content/StudentComplaintSystem/images/leadcity university.png"}]]]></EndpointProperties>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jlukr8vn5l"},{"Name":"integrity","Value":"sha256-56LrJl9pv2MwzKP7Ys5FwiDyzHJF4Z3VTlTUZHxgztI="},{"Name":"label","Value":"_content/StudentComplaintSystem/images/leadcity-university.png"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7775"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002256LrJl9pv2MwzKP7Ys5FwiDyzHJF4Z3VTlTUZHxgztI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 15 May 2026 20:22:48 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/StudentComplaintSystem/images/leadcity university.png">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\leadcity university.png'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/StudentComplaintSystem/images/leadcity-university.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\leadcity-university.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-56LrJl9pv2MwzKP7Ys5FwiDyzHJF4Z3VTlTUZHxgztI="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"7775"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002256LrJl9pv2MwzKP7Ys5FwiDyzHJF4Z3VTlTUZHxgztI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 15 May 2026 20:22:48 GMT"}]]]></ResponseHeaders>

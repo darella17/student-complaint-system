@@ -13,7 +13,7 @@ public class AdminDashboardModel : PageModel
         _context = context;
     }
 
-    public List<Complaint> Complaints { get; set; }
+    public List<Complaint> Complaints { get; set; } = new List<Complaint>();
 
     public IActionResult OnGet()
     {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ku5eO+E6ply+04INOMOt1F7+Eetsw9hT3n/hPVN8gig=",
+  "Hash": "+Uo9tNMUZlnmfHdZiKVFiZnuY/zcIFGLWtmEcPD14Zs=",
   "Source": "StudentComplaintSystem",
   "BasePath": "_content/StudentComplaintSystem",
   "Mode": "Default",
@@ -101,12 +101,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Solo\\StudentComplaintSystem\\wwwroot\\images\\leadcity university.png",
+      "Identity": "C:\\Users\\Solo\\StudentComplaintSystem\\wwwroot\\images\\leadcity-university.png",
       "SourceId": "StudentComplaintSystem",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Solo\\StudentComplaintSystem\\wwwroot\\",
       "BasePath": "_content/StudentComplaintSystem",
-      "RelativePath": "images/leadcity university#[.{fingerprint}]?.png",
+      "RelativePath": "images/leadcity-university#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -119,7 +119,7 @@
       "Integrity": "56LrJl9pv2MwzKP7Ys5FwiDyzHJF4Z3VTlTUZHxgztI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\leadcity university.png"
+      "OriginalItemSpec": "wwwroot\\images\\leadcity-university.png"
     },
     {
       "Identity": "C:\\Users\\Solo\\StudentComplaintSystem\\wwwroot\\js\\site.js",
@@ -1569,8 +1569,8 @@
       ]
     },
     {
-      "Route": "images/leadcity university.jlukr8vn5l.png",
-      "AssetFile": "C:\\Users\\Solo\\StudentComplaintSystem\\wwwroot\\images\\leadcity university.png",
+      "Route": "images/leadcity-university.jlukr8vn5l.png",
+      "AssetFile": "C:\\Users\\Solo\\StudentComplaintSystem\\wwwroot\\images\\leadcity-university.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1605,7 +1605,7 @@
         },
         {
           "Name": "label",
-          "Value": "images/leadcity university.png"
+          "Value": "images/leadcity-university.png"
         },
         {
           "Name": "integrity",
@@ -1614,8 +1614,8 @@
       ]
     },
     {
-      "Route": "images/leadcity university.png",
-      "AssetFile": "C:\\Users\\Solo\\StudentComplaintSystem\\wwwroot\\images\\leadcity university.png",
+      "Route": "images/leadcity-university.png",
+      "AssetFile": "C:\\Users\\Solo\\StudentComplaintSystem\\wwwroot\\images\\leadcity-university.png",
       "Selectors": [],
       "ResponseHeaders": [
         {

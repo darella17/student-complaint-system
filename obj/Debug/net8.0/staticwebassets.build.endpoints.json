@@ -249,8 +249,8 @@
       ]
     },
     {
-      "Route": "images/leadcity university.jlukr8vn5l.png",
-      "AssetFile": "images/leadcity university.png",
+      "Route": "images/leadcity-university.jlukr8vn5l.png",
+      "AssetFile": "images/leadcity-university.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -289,13 +289,13 @@
         },
         {
           "Name": "label",
-          "Value": "images/leadcity university.png"
+          "Value": "images/leadcity-university.png"
         }
       ]
     },
     {
-      "Route": "images/leadcity university.png",
-      "AssetFile": "images/leadcity university.png",
+      "Route": "images/leadcity-university.png",
+      "AssetFile": "images/leadcity-university.png",
       "Selectors": [],
       "ResponseHeaders": [
         {

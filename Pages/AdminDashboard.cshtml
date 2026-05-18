@@ -1,7 +1,6 @@
 @page
 @model AdminDashboardModel
 
-
 <div class="mb-3 text-end">
     <a class="btn btn-danger btn-sm" href="/Logout">
         Logout
@@ -48,7 +47,6 @@
 <h5 class="mt-4 mb-3">All Complaints</h5>
 
 <style>
-    /* FORCE STRONG BORDERS */
     table.force-table {
         border-collapse: collapse;
         width: 100%;
@@ -72,6 +70,9 @@
 
         <thead>
             <tr>
+                <th>Student Name</th>
+                <th>Matric Number</th>
+                <th>Level</th>
                 <th>Title</th>
                 <th>Description</th>
                 <th>Status</th>
@@ -85,8 +86,10 @@
         @foreach (var item in Model.Complaints)
         {
             <tr>
+                <td>@item.StudentName</td>
+                <td>@item.MatricNumber</td>
+                <td>@item.Level</td>
                 <td>@item.Title</td>
-
                 <td>@item.Description</td>
 
                 <td>
@@ -96,7 +99,7 @@
                     }
                     else
                     {
-                        <span class="badge bg-warning text-dark">Pending</span>
+                        <span class="badge bg-warning text-dark">@item.Status</span>
                     }
                 </td>
 
