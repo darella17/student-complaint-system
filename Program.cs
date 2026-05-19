@@ -12,7 +12,6 @@ var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 
 if (!string.IsNullOrEmpty(databaseUrl))
 {
-    // Render PostgreSQL database
     var uri = new Uri(databaseUrl);
     var userInfo = uri.UserInfo.Split(':');
 
@@ -29,7 +28,7 @@ if (!string.IsNullOrEmpty(databaseUrl))
 }
 else
 {
-    // Local SQLite for development
+    // FALLBACK (IMPORTANT FOR DEBUGGING ON RENDER)
     builder.Services.AddDbContext<AppDbContext>(options =>
         options.UseSqlite("Data Source=complaints.db"));
 }
