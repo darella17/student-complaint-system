@@ -166,3 +166,5 @@ C:\Users\Solo\StudentComplaintSystem\obj\Debug\net8.0\refint\StudentComplaintSys
 C:\Users\Solo\StudentComplaintSystem\obj\Debug\net8.0\StudentComplaintSystem.pdb
 C:\Users\Solo\StudentComplaintSystem\obj\Debug\net8.0\StudentComplaintSystem.genruntimeconfig.cache
 C:\Users\Solo\StudentComplaintSystem\obj\Debug\net8.0\ref\StudentComplaintSystem.dll
+C:\Users\Solo\StudentComplaintSystem\bin\Debug\net8.0\Npgsql.dll
+C:\Users\Solo\StudentComplaintSystem\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
