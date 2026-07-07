@@ -29,7 +29,7 @@ if (!string.IsNullOrEmpty(databaseUrl))
 
     var connectionString =
         $"Host={uri.Host};" +
-        $"Port={uri.Port};" +
+        $"Port={(uri.Port == -1 ? 5432 : uri.Port)};" +
         $"Database={uri.AbsolutePath.TrimStart('/')};" +
         $"Username={userInfo[0]};" +
         $"Password={userInfo[1]};" +
