@@ -1,0 +1,229 @@
+@page
+@model StudentComplaintSystem.Pages.QualityControlModel
+
+<h2 class="mb-4 text-primary fw-bold">
+    Quality Control Dashboard
+</h2>
+
+<div class="mb-4 text-end">
+    <a class="btn btn-success"
+       href="/QualityControlReport"
+       target="_blank">
+        Download QC Report
+    </a>
+</div>
+
+<div class="row mb-4">
+
+    <div class="col-md-3">
+        <div class="card border-primary shadow">
+            <div class="card-body text-center">
+                <h6>Total Complaints</h6>
+                <h2>@Model.Complaints.Count</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card border-warning shadow">
+            <div class="card-body text-center">
+                <h6>Pending</h6>
+                <h2>@Model.Complaints.Count(c => c.Status == "Pending")</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card border-success shadow">
+            <div class="card-body text-center">
+                <h6>Fully Resolved</h6>
+                <h2>@Model.Complaints.Count(c => c.Status == "Fully Resolved")</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card border-danger shadow">
+            <div class="card-body text-center">
+                <h6>Overdue</h6>
+                <h2>@Model.OverdueCount</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<h4 class="mt-5 text-danger">⚠ Complaints Requiring Attention</h4>
+
+<table class="table table-bordered table-striped">
+
+    <thead class="table-danger">
+        <tr>
+            <th>Student</th>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Days Pending</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    @foreach (var item in Model.Complaints.Where(c =>
+        c.Status == "Pending" &&
+        (DateTime.Now - c.DateSubmitted).TotalDays > 7))
+    {
+        <tr>
+            <td>@item.StudentName</td>
+            <td>@item.Category</td>
+            <td>@item.Title</td>
+            <td><span class="badge bg-danger">@item.Status</span></td>
+            <td>@((DateTime.Now - item.DateSubmitted).Days)</td>
+        </tr>
+    }
+
+    </tbody>
+
+</table>
+
+<h4 class="mt-5">📊 Complaint Analytics</h4>
+
+<table class="table table-bordered w-50">
+
+    <thead class="table-primary">
+        <tr>
+            <th>Category</th>
+            <th>Total Complaints</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    @foreach (var item in Model.CategoryStats)
+    {
+        <tr>
+            <td>@item.Key</td>
+            <td>@item.Value</td>
+        </tr>
+    }
+
+    </tbody>
+
+</table>
+
+<h4 class="mt-5">📈 Management Insights</h4>
+
+<div class="row mb-4">
+
+    <div class="col-md-4">
+        <div class="card border-success shadow">
+            <div class="card-body text-center">
+                <h6>Most Complained Category</h6>
+                <h4>@Model.MostComplainedCategory</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-secondary shadow">
+            <div class="card-body text-center">
+                <h6>Least Complained Category</h6>
+                <h4>@Model.LeastComplainedCategory</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-primary shadow">
+            <div class="card-body text-center">
+                <h6>Total Fully Resolved</h6>
+                <h4>@Model.TotalResolved</h4>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<form method="get" class="row g-3 mb-4">
+
+    <div class="col-md-3">
+        <label class="form-label">Status</label>
+        <select name="status" class="form-select">
+            <option value="">All</option>
+            <option>Pending</option>
+            <option>Fully Resolved</option>
+        </select>
+    </div>
+
+    <div class="col-md-3">
+        <label class="form-label">Category</label>
+        <select name="category" class="form-select">
+            <option value="">All</option>
+            <option>Water Supply</option>
+            <option>Electricity</option>
+            <option>Hostel</option>
+            <option>Academics</option>
+            <option>Lecturer</option>
+            <option>Security</option>
+            <option>Fees</option>
+            <option>ICT / Internet</option>
+            <option>Others</option>
+        </select>
+    </div>
+
+    <div class="col-md-3">
+        <label class="form-label">Level</label>
+        <select name="level" class="form-select">
+            <option value="">All</option>
+            <option>100</option>
+            <option>200</option>
+            <option>300</option>
+            <option>400</option>
+            <option>500</option>
+        </select>
+    </div>
+
+    <div class="col-md-3">
+        <label class="form-label">Matric Number</label>
+        <input type="text" name="matricNumber" class="form-control" placeholder="Search..." />
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary w-100">
+            Filter Results
+        </button>
+    </div>
+
+</form>
+
+<h4 class="mt-4">All Complaints</h4>
+
+<table class="table table-bordered table-striped">
+
+    <thead class="table-dark">
+        <tr>
+            <th>Student</th>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    @foreach (var item in Model.Complaints)
+    {
+        <tr>
+            <td>@item.StudentName</td>
+            <td>@item.Category</td>
+            <td>@item.Title</td>
+            <td>@item.Status</td>
+            <td>@item.DateSubmitted</td>
+
+        </tr>
+    }
+
+    </tbody>
+
+</table>

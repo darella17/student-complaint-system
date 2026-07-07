@@ -68,6 +68,10 @@ th{
     background:#f5f5f5;
 }
 
+.btn{
+    margin-right:5px;
+}
+
 </style>
 
 <div class="main-content">
@@ -78,17 +82,28 @@ th{
     </div>
 
     <div class="profile-card">
-
         <div class="profile-info">
             <h5>Student Dashboard</h5>
             <p>Welcome to your dashboard</p>
         </div>
 
         <img src="~/images/leadcity-university.png" class="profile-photo" />
-
     </div>
 
     <div class="status-bar">
+
+        <form method="get" style="margin-bottom:15px;">
+            <label><strong>Filter by Status:</strong></label>
+
+            <select name="status">
+                <option value="">All</option>
+                <option value="Pending">Pending</option>
+                <option value="Pending Student Confirmation">Pending Student Confirmation</option>
+                <option value="Fully Resolved">Fully Resolved</option>
+            </select>
+
+            <button type="submit">Filter</button>
+        </form>
 
         <h4>Your Complaints</h4>
 
@@ -98,26 +113,58 @@ th{
                     <th>Student Name</th>
                     <th>Matric Number</th>
                     <th>Level</th>
+                    <th>Category</th>
                     <th>Title</th>
                     <th>Description</th>
                     <th>Status</th>
                     <th>Date Submitted</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
 
             <tbody>
-                @foreach (var item in Model.Complaints)
-                {
-                    <tr>
-                        <td>@item.StudentName</td>
-                        <td>@item.MatricNumber</td>
-                        <td>@item.Level</td>
-                        <td>@item.Title</td>
-                        <td>@item.Description</td>
-                        <td>@item.Status</td>
-                        <td>@item.DateSubmitted</td>
-                    </tr>
-                }
+
+            @foreach (var item in Model.Complaints)
+            {
+                <tr>
+                    <td>@item.StudentName</td>
+                    <td>@item.MatricNumber</td>
+                    <td>@item.Level</td>
+                    <td>@item.Category</td>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td>@item.Status</td>
+                    <td>@item.DateSubmitted</td>
+
+                    <td>
+
+                        @if (item.Status == "Pending Student Confirmation")
+                        {
+                            <a class="btn btn-warning btn-sm"
+                               href="/ConfirmResolution?id=@item.Id">
+                                Confirm Resolution
+                            </a>
+                        }
+
+                        @if (item.Status == "Fully Resolved")
+                        {
+                            <a class="btn btn-success btn-sm"
+                               href="/PrintReport?id=@item.Id"
+                               target="_blank">
+                                Print
+                            </a>
+                        }
+
+                        @if (item.Status == "Pending")
+                        {
+                            <span class="text-muted">No Action</span>
+                        }
+
+                    </td>
+
+                </tr>
+            }
+
             </tbody>
 
         </table>

@@ -36,15 +36,70 @@
         <div class="card border-success shadow-lg">
             <div class="card-body text-center">
                 <h5 class="text-success">Resolved</h5>
-                <h2 class="fw-bold">@Model.Complaints.Count(c => c.Status == "Resolved")</h2>
+                <h2 class="fw-bold">@Model.Complaints.Count(c => c.Status == "Fully Resolved")</h2>
             </div>
         </div>
     </div>
 
 </div>
 
-<!-- TABLE -->
 <h5 class="mt-4 mb-3">All Complaints</h5>
+
+<form method="get" class="row g-3 mb-4">
+
+    <div class="col-md-3">
+        <label class="form-label">Status</label>
+        <select name="status" class="form-select">
+            <option value="">All</option>
+            <option value="Pending">Pending</option>
+            <option value="Fully Resolved">Fully Resolved</option>
+        </select>
+    </div>
+
+    <!-- CATEGORY FILTER (NEW) -->
+    <div class="col-md-3">
+        <label class="form-label">Category</label>
+        <select name="category" class="form-select">
+            <option value="">All</option>
+            <option>Water Supply</option>
+            <option>Electricity</option>
+            <option>Hostel</option>
+            <option>Academics</option>
+            <option>Lecturer</option>
+            <option>Security</option>
+            <option>Fees</option>
+            <option>ICT / Internet</option>
+            <option>Others</option>
+        </select>
+    </div>
+
+    <div class="col-md-3">
+        <label class="form-label">Level</label>
+        <select name="level" class="form-select">
+            <option value="">All</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="300">300</option>
+            <option value="400">400</option>
+            <option value="500">500</option>
+        </select>
+    </div>
+
+    <div class="col-md-3">
+        <label class="form-label">Matric Number</label>
+        <input type="text"
+               name="matricNumber"
+               class="form-control"
+               placeholder="Enter matric number..." />
+    </div>
+
+    <div class="col-md-3 d-flex align-items-end">
+        <button type="submit" class="btn btn-primary w-100">
+            Filter
+        </button>
+    </div>
+
+</form>
 
 <style>
     table.force-table {
@@ -73,6 +128,7 @@
                 <th>Student Name</th>
                 <th>Matric Number</th>
                 <th>Level</th>
+                <th>Category</th>
                 <th>Title</th>
                 <th>Description</th>
                 <th>Status</th>
@@ -89,13 +145,14 @@
                 <td>@item.StudentName</td>
                 <td>@item.MatricNumber</td>
                 <td>@item.Level</td>
+                <td>@item.Category</td>
                 <td>@item.Title</td>
                 <td>@item.Description</td>
 
                 <td>
-                    @if (item.Status == "Resolved")
+                    @if (item.Status == "Fully Resolved")
                     {
-                        <span class="badge bg-success">Resolved</span>
+                        <span class="badge bg-success">Fully Resolved</span>
                     }
                     else
                     {
@@ -106,7 +163,7 @@
                 <td>@item.DateSubmitted</td>
 
                 <td>
-                    @if (item.Status != "Resolved")
+                    @if (item.Status != "Fully Resolved")
                     {
                         <a class="btn btn-sm btn-success"
                            href="/Resolve?id=@item.Id">
@@ -115,7 +172,11 @@
                     }
                     else
                     {
-                        <span class="text-muted">Done</span>
+                        <a class="btn btn-sm btn-primary"
+                           href="/PrintReport?id=@item.Id"
+                           target="_blank">
+                            Print
+                        </a>
                     }
                 </td>
             </tr>

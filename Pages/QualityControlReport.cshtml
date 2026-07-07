@@ -1,0 +1,79 @@
+@page
+@model StudentComplaintSystem.Pages.QualityControlReportModel
+
+<h2 class="mb-4 text-center fw-bold">
+    Quality Control Report
+</h2>
+
+<p class="text-center text-muted">
+    Generated automatically from Complaint Management System
+</p>
+
+<hr />
+
+<h4>Summary</h4>
+
+<ul>
+    <li>Total Complaints: @Model.Complaints.Count</li>
+    <li>Pending: @Model.Complaints.Count(c => c.Status == "Pending")</li>
+    <li>Fully Resolved: @Model.Complaints.Count(c => c.Status == "Fully Resolved")</li>
+</ul>
+
+<hr />
+
+<h4>Category Breakdown</h4>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Category</th>
+            <th>Total Complaints</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CategoryStats)
+        {
+            <tr>
+                <td>@item.Key</td>
+                <td>@item.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<h4>All Complaints</h4>
+
+<table class="table table-sm table-bordered">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Complaints)
+        {
+            <tr>
+                <td>@item.StudentName</td>
+                <td>@item.Category</td>
+                <td>@item.Title</td>
+                <td>@item.Status</td>
+                <td>@item.DateSubmitted</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<div class="text-center mt-4">
+    <button onclick="window.print()" class="btn btn-primary">
+        Print Report
+    </button>
+</div>

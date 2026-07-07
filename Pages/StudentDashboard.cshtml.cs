@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using StudentComplaintSystem.Data;
 using StudentComplaintSystem.Models;
@@ -15,11 +16,18 @@ namespace StudentComplaintSystem.Pages
             _context = context;
         }
 
-        public List<Complaint> Complaints { get; set; }
+        public List<Complaint> Complaints { get; set; } = new();
 
-        public void OnGet()
+        public void OnGet(string? status)
         {
-            Complaints = _context.Complaints.ToList();
+            var query = _context.Complaints.AsQueryable();
+
+            if (!string.IsNullOrEmpty(status))
+            {
+                query = query.Where(c => c.Status == status);
+            }
+
+            Complaints = query.ToList();
         }
     }
 }

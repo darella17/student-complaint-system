@@ -24,6 +24,9 @@ namespace StudentComplaintSystem.Pages
         public string Level { get; set; }
 
         [BindProperty]
+        public string Category { get; set; }
+
+        [BindProperty]
         public string Title { get; set; }
 
         [BindProperty]
@@ -36,9 +39,11 @@ namespace StudentComplaintSystem.Pages
                 StudentName = StudentName,
                 MatricNumber = MatricNumber,
                 Level = Level,
+                Category = Category,
                 Title = Title,
                 Description = Description,
-                Status = "Pending",
+                AdminResolved = false,
+                StudentConfirmed = false,
                 DateSubmitted = DateTime.Now
             };
 

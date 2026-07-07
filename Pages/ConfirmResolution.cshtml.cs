@@ -4,11 +4,11 @@ using StudentComplaintSystem.Data;
 
 namespace StudentComplaintSystem.Pages
 {
-    public class ResolveModel : PageModel
+    public class ConfirmResolutionModel : PageModel
     {
         private readonly AppDbContext _context;
 
-        public ResolveModel(AppDbContext context)
+        public ConfirmResolutionModel(AppDbContext context)
         {
             _context = context;
         }
@@ -17,13 +17,16 @@ namespace StudentComplaintSystem.Pages
         {
             var complaint = _context.Complaints.FirstOrDefault(c => c.Id == id);
 
-            if (complaint != null)
+            if (complaint == null)
             {
-                complaint.AdminResolved = true;
-                _context.SaveChanges();
+                return NotFound();
             }
 
-            return RedirectToPage("/AdminDashboard");
+            complaint.StudentConfirmed = true;
+
+            _context.SaveChanges();
+
+            return RedirectToPage("/StudentDashboard");
         }
     }
 }

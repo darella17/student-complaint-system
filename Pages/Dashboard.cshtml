@@ -5,6 +5,18 @@
 
 <a href="/SubmitComplaint">Submit New Complaint</a>
 
+<form method="get" style="margin-top:20px;">
+    <label>Filter by Status:</label>
+
+    <select name="status">
+        <option value="">All</option>
+        <option value="Pending">Pending</option>
+        <option value="Resolved">Resolved</option>
+    </select>
+
+    <button type="submit">Filter</button>
+</form>
+
 <table border="1" style="margin-top:20px;">
     <tr>
         <th>Title</th>

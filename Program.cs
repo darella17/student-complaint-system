@@ -5,7 +5,19 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services
 builder.Services.AddRazorPages();
-builder.Services.AddSession();
+
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(60);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+    options.Cookie.SecurePolicy = Microsoft.AspNetCore.Http.CookieSecurePolicy.None;
+    options.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Lax;
+});
+
+builder.Services.AddHttpContextAccessor();
 
 // DATABASE CONFIGURATION
 var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
@@ -28,7 +40,6 @@ if (!string.IsNullOrEmpty(databaseUrl))
 }
 else
 {
-    // FALLBACK (IMPORTANT FOR DEBUGGING ON RENDER)
     builder.Services.AddDbContext<AppDbContext>(options =>
         options.UseSqlite("Data Source=complaints.db"));
 }
@@ -36,21 +47,15 @@ else
 var app = builder.Build();
 
 app.UseStaticFiles();
+
+app.UseRouting();
+ 
+
 app.UseSession();
 
-// Configure pipeline
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error");
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
-app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
 // Create database automatically
 using (var scope = app.Services.CreateScope())
 {
